@@ -1,0 +1,34 @@
+Since the linked lists are stored in reversed order, the result can simply be added.
+Add the ones
+Then the tens
+Then the hundreds
+and so on.
+Remember to account for carrys ex. a result of "12"
+
+For Python3:
+Initialize a dummy node as a ListNode(), and init a "current" var that is = the dummy node.
+Also init a carry value variable.
+
+Use a while loop with the condition: if l1 or l2 or carry value to loop through nodes.
+First things first get the value from l1 and l2. Remember to check that they exist, if they do not exist then set the value as 0 instead.
+
+Next simply calculate the newest value by adding l1 value, l2 value and the carry value.
+Make sure to account for carry values by extracting the carry using division, and the new value using modulo:
+carry = newValue // 10
+newValue = newValue % 10
+
+After all that set the next listnode to be a listnode of the new value:
+current.next = ListNode(newValue)
+
+Now set the pointer vars so the program can continue. Make sure to set the current as current.next,
+set l1 and l2 as listnode.next OR None if they do not exist.
+
+Finally, return the dummy nodes .next as the result.
+
+
+This problem can also be solved by just using built in functions, for example
+1. extract nums from list nodes so your result is something like: 361, and 8246
+2. reverse the numbers, for the above it'd be: 163, and 6428
+3. Add them.
+4. Loop through the sum in reverse, for each digit create a node.
+5. Return

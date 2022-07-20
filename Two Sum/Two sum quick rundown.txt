@@ -1,0 +1,16 @@
+Achieve O(n) complexity by mapping the numbers we already process.
+
+Initialize a list that will hold the processed numbers.
+The format in Python3 is:
+processedNums = {}
+We store values as value: index.
+
+So loop through every number in the nums list.
+Get the remainder, which is the target number minus the current nums[index]:
+remainder = target - nums[index]
+
+Then check if the remainder is in our processed numbers list.
+If it is, return the current index and the inex of the processed remainder.
+
+Finally, if a solution was not found add the current number to the processed numbers list:
+processedNums[value] = index
